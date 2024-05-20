@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GamePage"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@color/white"
+        app:tint="@color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:orientation="vertical">
+        <TextView
+            android:textColor="#FBFBFB"
+            android:id="@+id/tv_name"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="TEST">
+        </TextView>
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_margin="30dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+        </ImageView>
+        <TextView
+            android:textColor="#FBFBFB"
+            android:id="@+id/tv_type"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="жанр: тест"
+            android:textSize="15sp">
+        </TextView>
+        <ImageView
+            android:id="@+id/change_descr"
+            android:layout_gravity="right"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:src="@drawable/ic_change_foreground">
+        </ImageView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="460dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:textColor="#FBFBFB"
+                    android:id="@+id/tv_desciption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="10dp">
+                </TextView>
+                <WebView
+                    android:id="@+id/tv_link"
+                    android:layout_gravity="center"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="italic">
+                </WebView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

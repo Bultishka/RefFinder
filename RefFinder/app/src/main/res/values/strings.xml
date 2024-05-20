@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RefFinder</string>
+    <string name="headerApp">О приложении</string>
+    <string name="txt_about">RefFinder - приложение, созданное для помощи геймдизайнерам
+        в поиске необходимых референсов</string>
+    <string name="headerAuthor">Об авторе</string>
+    <string name="txt_author">
+        ФИО: Косов Григорий Максимович
+        \nГруппа: ИКБО-03-22
+        \nПрофессия: геймдизайнер
+        \nГод разработки: 2024
+        \nПочта для связи: GrishaShool@gmail.com
+    </string>
+    <string name="headerExit">Выход из аккаунта</string>
+    <string name="txt_exit">Выйти из аккаунта?</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

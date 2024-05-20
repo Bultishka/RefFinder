@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/account_btn"
+        android:icon="@drawable/account_btn"
+        android:title="account"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/about_author"
+        android:title="об авторе"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:id="@+id/about_app"
+        android:title="о приложении"
+        app:showAsAction="never">
+    </item>
+</menu>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:textColor="#FBFBFB"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Регистрация"
+            android:textSize="35sp">
+        </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#FBFBFB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Почта: "
+                android:textSize="20sp"
+                android:layout_margin="20dp">
+            </TextView>
+            <EditText
+                android:layout_marginTop="20dp"
+                android:textColor="#FBFBFB"
+                android:textColorHint="#255919"
+                android:hint="Введите почту"
+                android:id="@+id/mail_edt"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:ellipsize="end">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#FBFBFB"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Пароль: "
+                android:textSize="20sp"
+                android:layout_margin="20dp">
+            </TextView>
+            <EditText
+                android:layout_marginTop="20dp"
+                android:textColor="#FBFBFB"
+                android:hint="Придумайте пароль"
+                android:id="@+id/password_edt"
+                android:layout_width="fill_parent"
+                android:textColorHint="#255919"
+                android:layout_height="match_parent"
+                android:scrollHorizontally="true">
+            </EditText>
+        </LinearLayout>
+        <Button
+            android:id="@+id/register"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Зарегистрироваться">
+        </Button>
+        <TextView
+            android:textColor="#FBFBFB"
+            android:id="@+id/back"
+            android:layout_marginTop="300dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Войти в аккаунт"
+            android:textSize="19sp"
+            android:textStyle="bold">
+        </TextView>
+    </LinearLayout>
+
+</FrameLayout>
