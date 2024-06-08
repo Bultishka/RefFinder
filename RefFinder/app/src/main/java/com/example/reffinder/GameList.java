@@ -85,7 +85,6 @@ public class GameList extends Fragment {
                 intent.putExtra("Name", selectedGame.Name);
                 intent.putExtra("Poster", selectedGame.image);
                 intent.putExtra("Type", selectedGame.Type);
-                intent.putExtra("Description", selectedGame.Description);
                 intent.putExtra("Link", selectedGame.Link);
                 startActivity(intent);
             }
@@ -101,7 +100,8 @@ public class GameList extends Fragment {
         DatabaseReference shooters = gamesRef.child("Shooters");
         DatabaseReference horrors = gamesRef.child("Horrors");
         DatabaseReference races = gamesRef.child("Races");
-        DatabaseReference simulators = gamesRef.child("Simulator");
+        DatabaseReference simulators = gamesRef.child("Simulators");
+        DatabaseReference other = gamesRef.child("Other");
 
         if(gameType == 1){
             shooters.addValueEventListener(new ValueEventListener() {
@@ -174,6 +174,29 @@ public class GameList extends Fragment {
         }
         if(gameType == 4){
             simulators.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    games.clear();
+                    for(DataSnapshot gameSnapshot : snapshot.getChildren()){
+                        Game game = gameSnapshot.getValue(Game.class);
+                        if(game != null){
+                            games.add(game);
+                            Log.d("GameData", "Name: " + game.Name + ", Type: " + game.Type);
+                        } else{
+                            Log.e("GameData", "Game object is null");
+                        }
+                    }
+                    boxAdapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(getActivity(), "Error loading data from Firebase", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        if(gameType == 5){
+            other.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     games.clear();

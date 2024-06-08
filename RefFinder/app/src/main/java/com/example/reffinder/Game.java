@@ -1,19 +1,17 @@
 package com.example.reffinder;
 
 public class Game {
-    String Description;
     String Name;
-    Integer Release;
+    String Release;
     String Type;
     String Link;
-    int image;
+    String image;
 
     public Game(){
 
     }
 
-    public Game(String description, String name, Integer release, String type, String link, int image) {
-        Description = description;
+    public Game(String name, String release, String type, String link, String image) {
         Name = name;
         Release = release;
         this.Type = type;
@@ -21,13 +19,6 @@ public class Game {
         this.image = image;
     }
 
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String description) {
-        Description = description;
-    }
 
     public String getName() {
         return Name;
@@ -37,11 +28,11 @@ public class Game {
         Name = name;
     }
 
-    public Integer getRelease() {
+    public String getRelease() {
         return Release;
     }
 
-    public void setRelease(Integer release) {
+    public void setRelease(String release) {
         Release = release;
     }
 
@@ -61,11 +52,11 @@ public class Game {
         this.Link = link;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }

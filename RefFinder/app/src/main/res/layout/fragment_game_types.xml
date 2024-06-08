@@ -5,22 +5,127 @@
     android:layout_height="match_parent"
     tools:context=".GameTypes">
 
-    <TableLayout
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-        <TableRow
-            android:gravity="center">
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_add_game"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить игру"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible">
+        </Button>
+        <TableLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TableRow
+                android:gravity="center">
+                <LinearLayout
+                    android:id="@+id/shooter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/background_circle"
+                        android:src="@drawable/shooters_icon"
+                        android:padding="40dp">
+                    </ImageView>
+                    <TextView
+                        android:textColor="#FBFBFB"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Шутеры"
+                        android:textSize="20sp">
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/horror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/background_circle"
+                        android:src="@drawable/ic_horror"
+                        android:padding="40dp">
+                    </ImageView>
+                    <TextView
+                        android:textColor="#FBFBFB"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Хорроры"
+                        android:textSize="20sp">
+                    </TextView>
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:gravity="center">
+                <LinearLayout
+                    android:id="@+id/races"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/background_circle"
+                        android:src="@drawable/ic_races"
+                        android:padding="40dp">
+                    </ImageView>
+                    <TextView
+                        android:textColor="#FBFBFB"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Гонки"
+                        android:textSize="20sp">
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/simulators"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_margin="20dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/background_circle"
+                        android:src="@drawable/ic_simulator"
+                        android:padding="40dp">
+                    </ImageView>
+                    <TextView
+                        android:textColor="#FBFBFB"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Симуляторы"
+                        android:textSize="20sp">
+                    </TextView>
+                </LinearLayout>
+            </TableRow>
             <LinearLayout
-                android:id="@+id/shooter"
+                android:id="@+id/other"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
                     android:layout_margin="20dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:background="@drawable/background_circle"
-                    android:src="@drawable/shooters_icon"
                     android:padding="40dp">
                 </ImageView>
                 <TextView
@@ -28,80 +133,11 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Шутеры"
+                    android:text="Остальное"
                     android:textSize="20sp">
                 </TextView>
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/horror"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_margin="20dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/background_circle"
-                    android:src="@drawable/ic_horror"
-                    android:padding="40dp">
-                </ImageView>
-                <TextView
-                    android:textColor="#FBFBFB"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Хорроры"
-                    android:textSize="20sp">
-                </TextView>
-            </LinearLayout>
-        </TableRow>
-        <TableRow
-            android:gravity="center">
-            <LinearLayout
-                android:id="@+id/races"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_margin="20dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/background_circle"
-                    android:src="@drawable/ic_races"
-                    android:padding="40dp">
-                </ImageView>
-                <TextView
-                    android:textColor="#FBFBFB"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Гонки"
-                    android:textSize="20sp">
-                </TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/simulators"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_margin="20dp"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/background_circle"
-                    android:src="@drawable/ic_simulator"
-                    android:padding="40dp">
-                </ImageView>
-                <TextView
-                    android:textColor="#FBFBFB"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Симуляторы"
-                    android:textSize="20sp">
-                </TextView>
-            </LinearLayout>
-        </TableRow>
-    </TableLayout>
+        </TableLayout>
+    </LinearLayout>
 
 </FrameLayout>

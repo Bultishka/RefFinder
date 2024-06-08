@@ -73,8 +73,6 @@ public class GamePage extends AppCompatActivity {
         if (intent != null){
             gameType = intent.getIntExtra("Folder", 0);
             binding.tvName.setText(intent.getStringExtra("Name"));
-            binding.tvType.setText("Жанр: " + intent.getStringExtra("Type"));
-            binding.tvDesciption.setText(intent.getStringExtra("Description"));
             binding.tvLink.loadUrl(intent.getStringExtra("Link"));
             binding.tvLink.getSettings().setJavaScriptEnabled(true);
             binding.tvLink.setWebViewClient(new WebViewClient() {
@@ -90,72 +88,7 @@ public class GamePage extends AppCompatActivity {
 
             FirebaseStorage storage = FirebaseStorage.getInstance();
             StorageReference storageRef = storage.getReference();
-            StorageReference imageFolderRef = storageRef.child(intent.getStringExtra("Name"));
-            StorageReference imageRef = imageFolderRef.child("poster.png");
-
-            imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    String imageUrl = uri.toString();
-                    Glide.with(getBaseContext()).load(imageUrl).into(binding.ivPoster);
-                }
-            });
-            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-            String uid = currentUser.getUid();
-            DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-            userRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    admin = snapshot.child("admin").getValue(Boolean.class);
-                    if (admin) {
-                        binding.changeDescr.setVisibility(View.VISIBLE);
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
         }
-
-        binding.changeDescr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                View editDescriptionView = getLayoutInflater().inflate(R.layout.edit_description_layout, null);
-                EditText editDescriptionEditText = editDescriptionView.findViewById(R.id.edit_description);
-                editDescriptionEditText.setText(binding.tvDesciption.getText().toString());
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(GamePage.this);
-                builder.setView(editDescriptionView);
-
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-
-                Button saveDescriptionBtn = editDescriptionView.findViewById(R.id.save_description_btn);
-                saveDescriptionBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String newDescription = editDescriptionEditText.getText().toString();
-                        binding.tvDesciption.setText(newDescription);
-                        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-                        db = db.child("Games");
-                        if (gameType == 1){
-                            db = db.child("Shooters");
-                        } else if (gameType == 2) {
-                            db = db.child("Horrors");
-                        } else if (gameType == 3) {
-                            db = db.child("Races");
-                        } else if (gameType == 4) {
-                            db = db.child("Simulator");
-                        }
-                        db = db.child(binding.tvName.getText().toString());
-                        db.child("Description").setValue(newDescription);
-                        alertDialog.dismiss();
-                    }
-                });
-            }
-        });
     }
 
     private void showLoading() {

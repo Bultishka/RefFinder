@@ -56,20 +56,7 @@ public class BoxAdapter extends BaseAdapter {
 
         Game p = getGame(position);
         ImageView poster = view.findViewById(R.id.game_img);
-
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference();
-        StorageReference imageFolderRef = storageRef.child(p.Name);
-        StorageReference imageRef = imageFolderRef.child("poster.png");
-
-        imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                String imageUrl = uri.toString();
-                Glide.with(ctx).load(imageUrl).into(poster);
-            }
-        });
-
+        Glide.with(ctx).load(p.image).into(poster);
 
         ((TextView) view.findViewById(R.id.game_name)).setText(p.Name);
         ((TextView) view.findViewById(R.id.game_type)).setText(p.Type + " ");

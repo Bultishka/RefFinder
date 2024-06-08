@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genres">
+        <item>Остальное</item>
+        <item>Шутер</item>
+        <item>Хоррор</item>
+        <item>Гонки</item>
+        <item>Симуляторы</item>
+    </string-array>
+</resources>
